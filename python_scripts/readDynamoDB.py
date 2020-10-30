@@ -6,7 +6,8 @@ def read(table, times):
     ct = 0
     while ct < times:
         ct += 1
-        table.get_item(Key={'key':'value'})
+        response = table.get_item(Key={'key':'value'})
+        print(response['Item'])
 
 dynamodb = boto3.resource('dynamodb')
 table = dynamodb.Table('TableName')
